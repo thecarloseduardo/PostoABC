@@ -1,0 +1,91 @@
+unit ProjetoABC.Model.Components.Connection.FireDAC;
+
+interface
+
+uses
+  ProjetoABC.Model.Components.Connection.Contract,
+
+  FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.VCLUI.Wait,
+  FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, Data.DB,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client;
+
+type
+    TModelComponentsConnectionFireDAC = class(TInterfacedObject, IModelComponentsConnection)
+      FDConnection : TFDConnection;
+      FQuery       : TFDQuery;
+      private
+      public
+        constructor Create;
+        destructor Destroy; override;
+        class function New : IModelComponentsConnection;
+        function Active(AValue : Boolean)                         : IModelComponentsConnection;
+        function ClearSQL                                         : IModelComponentsConnection;
+        function ParamName(AParamName : string; AValue : string)  : IModelComponentsConnection; overload;
+        function ParamName(AParamName : string; AValue : integer) : IModelComponentsConnection; overload;
+        function SQL(AVAlue : string)                             : IModelComponentsConnection;
+        function Open                                             : IModelComponentsConnection;
+    end;
+
+implementation
+
+uses
+  System.SysUtils;
+
+{ TModelComponentsConnectionFireDAC }
+
+function TModelComponentsConnectionFireDAC.Active(AValue: Boolean): IModelComponentsConnection;
+begin
+  Result := Self;
+end;
+
+function TModelComponentsConnectionFireDAC.ClearSQL: IModelComponentsConnection;
+begin
+  Result := Self;
+  Self.FQuery.SQL.Clear;
+end;
+
+constructor TModelComponentsConnectionFireDAC.Create;
+begin
+  FDConnection := TFDConnection.Create(nil);
+  FQuery       := TFDQuery.Create(nil);
+end;
+
+destructor TModelComponentsConnectionFireDAC.Destroy;
+begin
+  FQuery.Free;
+  FDConnection.Free;
+  inherited;
+end;
+
+class function TModelComponentsConnectionFireDAC.New: IModelComponentsConnection;
+begin
+    Result := Self.Create;
+end;
+
+function TModelComponentsConnectionFireDAC.Open: IModelComponentsConnection;
+begin
+  Result := Self;
+  FQuery.Open;
+end;
+
+function TModelComponentsConnectionFireDAC.ParamName(AParamName, AValue: string): IModelComponentsConnection;
+begin
+  Result := Self;
+  FQuery.ParamByName(AParamName).AsString := QuotedStr(AValue);
+end;
+
+function TModelComponentsConnectionFireDAC.ParamName(AParamName: string; AValue: integer): IModelComponentsConnection;
+begin
+  Result := Self;
+  FQuery.ParamByName(AParamName).AsInteger := AValue;
+end;
+
+function TModelComponentsConnectionFireDAC.SQL(AVAlue: string): IModelComponentsConnection;
+begin
+  Result := Self;
+  FQuery.SQL.Add(AValue);
+end;
+
+end.

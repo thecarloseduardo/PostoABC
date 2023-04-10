@@ -1,0 +1,142 @@
+unit PostoABC.Model.DAO.Categoria;
+
+interface
+
+uses
+  Data.DB,
+  PostoABC.Model.Entities.Abastecimento,
+  ProjetoABC.Model.Components.Connection.Contract;
+
+type
+  TModelDAOAbastecimento = class
+    private
+      FConnection : IModelComponentsConnection;
+      FDataSet    : TDataSource;
+      FEntity     : TAbastecimento;
+    public
+      constructor Create;
+      destructor Destroy; override;
+      function Delete                     : TModelDAOAbastecimento;
+      function DataSet(AValue : TDataSource) : TModelDAOAbastecimento;
+      function Get                        : TModelDAOAbastecimento;
+      function Insert                     : TModelDAOAbastecimento;
+      function Update                     : TModelDAOAbastecimento;
+      function This                       : TAbastecimento;
+  end;
+
+implementation
+
+uses
+  System.SysUtils, ProjetoABC.Model.Components.Connection.FireDAC;
+
+{ TModelDAOAbastecimento }
+
+constructor TModelDAOAbastecimento.Create;
+begin
+  FConnection := TModelComponentsConnectionFireDAC.New;
+  FEntity := TAbastecimento.Create;
+end;
+
+function TModelDAOAbastecimento.DataSet(AValue: TDataSource): TModelDAOAbastecimento;
+begin
+  Result := Self;
+  FDataSet := AValue;
+  FDataSet.DataSet := Self.FConnection.DataSet;
+end;
+
+function TModelDAOAbastecimento.Delete: TModelDAOAbastecimento;
+begin
+  Result := Self;
+  try
+//    Self.FQuery.Active := false;
+//    Self.FQuery.SQL.Clear;
+//    Self.FQuery.SQL.Add('DELETE ABASTECIMENTO WHERE ID_ABASTECIMENTO = :ID_ABASTECIMENTO');
+//    Self.FQuery.ParamByName('ID_ABASTECIMENTO').AsInteger := Self.FEntity.IdAbastecimento;
+//    Self.FQuery.ExecSQL;
+  except
+    on e:exception do
+    begin
+      raise Exception.Create('Error ao atualizar o abastecimento: ' + e.Message);
+    end;
+  end;
+end;
+
+destructor TModelDAOAbastecimento.Destroy;
+begin
+    Self.FEntity.Free;
+  inherited;
+end;
+
+function TModelDAOAbastecimento.Get: TModelDAOAbastecimento;
+begin
+  Result := Self;
+  try
+    Self.FConnection.Active(false);
+    Self.FConnection.ClearSQL;
+    Self.FConnection.SQL('SELECT * FROM ABASTECIMENTO');
+//    Self.FQuery.SQL.Add('SELECT * FROM ABASTECIMENTO WHERE ID_ABASTECIMENTO = :ID_ABASTECIMENTO');
+//    Self.FQuery.ParamByName('ID_ABASTECIMENTO').AsInteger := Self.FEntity.IdAbastecimento;
+//    Self.FQuery.Open;
+  except
+    on e:exception do
+    begin
+      raise Exception.Create('Error ao inserir o abastecimento: ' + e.Message);
+    end;
+  end;
+end;
+
+function TModelDAOAbastecimento.Insert: TModelDAOAbastecimento;
+begin
+  Result := Self;
+  try
+    Self.FConnection.Active(false);
+    Self.FConnection.ClearSQL;
+    Self.FConnection.SQL('INSERT INTO ABASTECIMENTO(DATA_ABASTECIMENTO,');
+    Self.FConnection.SQL(' VALOR_LITRO, QUANTIDADE_LITROS, IMPOSTO, VALOR_ABASTECIMENTO)');
+    Self.FConnection.SQL(' VALUE (:DATA_ABASTECIMENTO, :VALOR_LITRO, :QUANTIDADE_LITROS,');
+    Self.FConnection.SQL(' :IMPOSTO, :VALOR_ABASTECIMENTO)');
+    Self.FConnection.ParamName('DATA_ABASTECIMENTO', Self.FEntity.DataAbastecimento);
+    Self.FConnection.ParamName('VALOR_LITRO', Self.FEntity.ValorPorLitro);
+    Self.FConnection.ParamName('QUANTIDADE_LITROS', Self.FEntity.QuantidadeLitros);
+    Self.FConnection.ParamName('IMPOSTO', Self.FEntity.Imposto);
+    Self.FConnection.ParamName('VALOR_ABASTECIMENTO', Self.FEntity.ValorAbastecimento);
+//    Self.FQuery.ExecSQL;
+  except
+    on e:exception do
+    begin
+      raise Exception.Create('Error ao inserir o abastecimento: ' + e.Message);
+    end;
+  end;
+end;
+
+function TModelDAOAbastecimento.This: TAbastecimento;
+begin
+  Result := Self.FEntity;
+end;
+
+function TModelDAOAbastecimento.Update: TModelDAOAbastecimento;
+begin
+  Result := Self;
+  try
+//    Self.FQuery.Active := false;
+//    Self.FQuery.SQL.Clear;
+//    Self.FQuery.SQL.Add('UPDATE ABASTECIMENTO SET DATA_ABASTECIMENTO = :DATA_ABASTECIMENTO,');
+//    Self.FQuery.SQL.Add(' VALOR_LITRO = :VALOR_LITRO, QUANTIDADE_LITROS = :QUANTIDADE_LITROS,');
+//    Self.FQuery.SQL.Add(' IMPOSTO = :IMPOSTO, VALOR_ABASTECIMENTO = :VALOR_ABASTECIMENTO');
+//    Self.FQuery.SQL.Add(' WHERE ID_ABASTECIMENTO = :ID_ABASTECIMENTO)');
+//    Self.FQuery.ParamByName('DATA_ABASTECIMENTO').AsFloat  := Self.FEntity.DataAbastecimento;
+//    Self.FQuery.ParamByName('VALOR_LITRO').AsFloat         := Self.FEntity.ValorPorLitro;
+//    Self.FQuery.ParamByName('QUANTIDADE_LITROS').AsFloat   := Self.FEntity.QuantidadeLitros;
+//    Self.FQuery.ParamByName('IMPOSTO').AsFloat             := Self.FEntity.QuantidadeLitros;
+//    Self.FQuery.ParamByName('VALOR_ABASTECIMENTO').AsFloat := Self.FEntity.ValorAbastecimento;
+//    Self.FQuery.ParamByName('ID_ABASTECIMENTO').AsInteger  := Self.FEntity.IdAbastecimento;
+//    Self.FQuery.ExecSQL;
+  except
+    on e:exception do
+    begin
+      raise Exception.Create('Error ao atualizar o abastecimento: ' + e.Message);
+    end;
+  end;
+end;
+
+end.

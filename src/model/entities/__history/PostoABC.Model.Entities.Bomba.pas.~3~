@@ -1,0 +1,62 @@
+unit PostoABC.Model.Entities.Bomba;
+
+interface
+
+type
+  TBomba = class
+  private
+    FIdBomba : integer;
+    FIdenficacaoBomba : string;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    function IdBomba(AValue : integer) : TBomba; overload;
+    function IdBomba : integer; overload;
+    function IdenticacaoBomba(AValue : string) : TBomba; overload;
+    function IdenficacaoBomba : string; overload;
+  end;
+
+implementation
+
+uses
+  System.SysUtils;
+
+{ TBomba }
+
+constructor TBomba.Create;
+begin
+
+end;
+
+destructor TBomba.Destroy;
+begin
+
+  inherited;
+end;
+
+function TBomba.IdBomba(AValue: integer): TBomba;
+begin
+  Result := Self;
+  FIdBomba := AValue;
+end;
+
+function TBomba.IdBomba: integer;
+begin
+  Result := FIdBomba;
+end;
+
+function TBomba.IdenficacaoBomba: string;
+begin
+  if FIdenficacaoBomba = '' then
+    raise Exception.Create('Idenficação da bomba não pode ser vazio.');
+
+  Result := FIdenficacaoBomba;
+end;
+
+function TBomba.IdenticacaoBomba(AValue: string): TBomba;
+begin
+  Result := Self;
+  FIdenficacaoBomba := AValue;
+end;
+
+end.

@@ -1,0 +1,10 @@
+unit Controller.types;
+
+interface
+
+implementation
+
+const
+  VALOR_IMPOSTO = 0.13;
+
+end.

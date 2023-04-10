@@ -1,0 +1,248 @@
+object frmRelatorioAbastecimento: TfrmRelatorioAbastecimento
+  Left = 0
+  Top = 0
+  Caption = 'Relatorio de Abastecimentos'
+  ClientHeight = 390
+  ClientWidth = 802
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object RLReport1: TRLReport
+    Left = 0
+    Top = 0
+    Width = 794
+    Height = 1123
+    DataSource = dsAbastecimentos
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = []
+    Title = 'Relat'#243'rio de Abastecimentos'
+    object RLBand1: TRLBand
+      Left = 38
+      Top = 38
+      Width = 718
+      Height = 51
+      BandType = btHeader
+      object RLSystemInfo1: TRLSystemInfo
+        Left = 341
+        Top = 0
+        Width = 36
+        Height = 16
+        Align = faCenterTop
+        Info = itTitle
+        Text = ''
+        Transparent = False
+      end
+      object RLLabel1: TRLLabel
+        Left = 291
+        Top = 22
+        Width = 177
+        Height = 27
+        Caption = 'Abastecimentos'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -24
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+        Transparent = False
+      end
+      object RLSystemInfo2: TRLSystemInfo
+        Left = 591
+        Top = 0
+        Width = 127
+        Height = 16
+        Align = faRightTop
+        Info = itPageNumber
+        Text = 'P'#225'gina'
+        Transparent = False
+      end
+    end
+    object RLBand3: TRLBand
+      Left = 38
+      Top = 89
+      Width = 718
+      Height = 16
+      BandType = btHeader
+      object RLLabel3: TRLLabel
+        Left = 3
+        Top = 0
+        Width = 41
+        Height = 16
+        Align = faTopOnly
+        Caption = 'Data'
+        Transparent = False
+      end
+      object RLLabel4: TRLLabel
+        Left = 320
+        Top = 0
+        Width = 46
+        Height = 16
+        Align = faTopOnly
+        Caption = 'Tanque'
+        Transparent = False
+      end
+      object RLLabel6: TRLLabel
+        Left = 461
+        Top = 0
+        Width = 111
+        Height = 16
+        Align = faTopOnly
+        Caption = 'Vlr Abastecimento'
+        Transparent = False
+      end
+      object RLLabel7: TRLLabel
+        Left = 128
+        Top = 0
+        Width = 45
+        Height = 16
+        Align = faTopOnly
+        Caption = 'Bomba'
+        Transparent = False
+      end
+      object RLLabel2: TRLLabel
+        Left = 578
+        Top = 0
+        Width = 50
+        Height = 16
+        Align = faTopOnly
+        Caption = 'Imposto'
+        Transparent = False
+      end
+      object RLLabel8: TRLLabel
+        Left = 634
+        Top = 0
+        Width = 32
+        Height = 16
+        Align = faTopOnly
+        Caption = 'Total'
+        Transparent = False
+      end
+    end
+    object RLGroup1: TRLGroup
+      Left = 38
+      Top = 105
+      Width = 718
+      Height = 64
+      DataFields = 'TANQUE'
+      object RLBand2: TRLBand
+        Left = 0
+        Top = 0
+        Width = 718
+        Height = 15
+        AutoSize = True
+        object RLDBText1: TRLDBText
+          Left = 324
+          Top = 1
+          Width = 50
+          Height = 14
+          Alignment = taCenter
+          DataField = 'TANQUE'
+          DataSource = dsAbastecimentos
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Roboto'
+          Font.Style = []
+          ParentFont = False
+          Text = ''
+        end
+        object RLDBText2: TRLDBText
+          Left = 3
+          Top = 1
+          Width = 94
+          Height = 14
+          DataField = 'DATA_ABASTECIMENTO'
+          DataSource = dsAbastecimentos
+          DisplayMask = 'DD/MM/YYYY'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Roboto'
+          Font.Style = []
+          ParentFont = False
+          Text = ''
+        end
+        object RLDBText4: TRLDBText
+          Left = 461
+          Top = 1
+          Width = 111
+          Height = 14
+          Alignment = taRightJustify
+          DataField = 'VALOR_ABASTECIMENTO'
+          DataSource = dsAbastecimentos
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Roboto'
+          Font.Style = []
+          ParentFont = False
+          Text = ''
+          BeforePrint = RLDBText4BeforePrint
+        end
+        object RLDBText5: TRLDBText
+          Left = 202
+          Top = 0
+          Width = 45
+          Height = 14
+          Alignment = taRightJustify
+          DataField = 'BOMBA'
+          DataSource = dsAbastecimentos
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Roboto'
+          Font.Style = []
+          ParentFont = False
+          Text = ''
+        end
+        object RLDBText6: TRLDBText
+          Left = 574
+          Top = 1
+          Width = 54
+          Height = 14
+          Alignment = taRightJustify
+          DataField = 'IMPOSTO'
+          DataSource = dsAbastecimentos
+          DisplayMask = '#0.00'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Roboto'
+          Font.Style = []
+          ParentFont = False
+          Text = ''
+          BeforePrint = RLDBText6BeforePrint
+        end
+        object RLDBText7: TRLDBText
+          Left = 634
+          Top = 1
+          Width = 81
+          Height = 14
+          DataSource = dsAbastecimentos
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Roboto'
+          Font.Style = []
+          ParentFont = False
+          Text = ''
+          BeforePrint = RLDBText7BeforePrint
+        end
+      end
+    end
+  end
+  object dsAbastecimentos: TDataSource
+    Left = 216
+    Top = 168
+  end
+end

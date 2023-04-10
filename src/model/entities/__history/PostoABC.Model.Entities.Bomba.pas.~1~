@@ -1,0 +1,7 @@
+unit PostoABC.Model.Entities.Bomba;
+
+interface
+
+implementation
+
+end.

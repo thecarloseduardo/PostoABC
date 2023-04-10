@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/11/29 16:45:47.000.495,=C:\Users\Acer\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/01/27 17:30:26.000.000,=C:\Users\Acer\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/04/04 10:10:44.000.467,=C:\Users\Acer\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/04/04 10:23:49.000.279,C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\view\PostoABC.View.Principal.pas=C:\Users\Acer\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/04/04 10:23:49.000.279,C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\view\PostoABC.View.Principal.dfm=C:\Users\Acer\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2023/04/04 10:24:05.000.893,C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\PostoABC.dproj=C:\Users\Acer\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2023/04/04 10:27:49.000.923,=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit1.pas</Transaction>
+    <Transaction>2023/04/04 10:28:57.000.051,C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\model\components\connection\ProjetoABC.Model.Components.Contract.pas=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit1.pas</Transaction>
+    <Transaction>2023/04/04 10:31:45.000.532,C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\model\components\connection\ProjetoABC.Model.Components.Connection.Contract.pas=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\model\components\connection\ProjetoABC.Model.Components.Contract.pas</Transaction>
+    <Transaction>2023/04/04 11:38:56.000.329,=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit1.pas</Transaction>
+    <Transaction>2023/04/04 11:39:25.000.513,C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\model\components\connection\ProjetoABC.Model.Components.Connection.FireDAC.pas=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit1.pas</Transaction>
+    <Transaction>2023/04/04 11:57:20.000.403,=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit1.pas</Transaction>
+    <Transaction>2023/04/04 12:04:02.000.317,C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\model\entities\PostoABC.Model.Entities.Tanque.pas=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit1.pas</Transaction>
+    <Transaction>2023/04/04 13:17:15.000.302,=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit1.pas</Transaction>
+    <Transaction>2023/04/04 13:17:31.000.961,C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\model\entities\PostoABC.Model.Entities.Bomba.pas=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit1.pas</Transaction>
+    <Transaction>2023/04/04 13:23:25.000.829,=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit1.pas</Transaction>
+    <Transaction>2023/04/04 13:23:42.000.728,C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\model\entities\PostoABC.Model.Entities.Abastecimento.pas=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit1.pas</Transaction>
+    <Transaction>2023/04/05 09:18:17.000.392,=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit1.pas</Transaction>
+    <Transaction>2023/04/05 09:20:53.000.920,C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit1.pas=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\model\DAO\ProjetoABC.Model.DAO.Categoria.pas</Transaction>
+    <Transaction>2023/04/05 09:23:46.000.212,C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\model\DAO\ProjetoABC.Model.DAO.Categoria.pas=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\model\DAO\PostoABC.Model.DAO.Categoria.pas</Transaction>
+    <Transaction>2023/04/05 18:45:02.000.371,=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit1.pas</Transaction>
+    <Transaction>2023/04/05 18:45:44.000.922,C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\model\DAO\PostoABC.Model.DAO.Categoria.pas=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\model\DAO\PostoABC.Model.DAO.Abastecimento.pas</Transaction>
+    <Transaction>2023/04/05 18:46:13.000.362,C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit1.pas=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\model\DAO\PostoABC.Model.DAO.Tanque.pas</Transaction>
+    <Transaction>2023/04/05 18:53:12.000.407,=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit1.pas</Transaction>
+    <Transaction>2023/04/05 18:53:24.000.369,C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit1.pas=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\model\DAO\PostoABC.Model.DAO.Contract.pas</Transaction>
+    <Transaction>2023/04/05 18:56:45.000.845,C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\model\components\connection\ProjetoABC.Model.Components.Connection.Contract.pas=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\model\components\connection\PostoABC.Model.Components.Connection.Contract.pas</Transaction>
+    <Transaction>2023/04/05 18:56:58.000.292,C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\model\components\connection\ProjetoABC.Model.Components.Connection.FireDAC.pas=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\model\components\connection\PostoABC.Model.Components.Connection.FireDAC.pas</Transaction>
+    <Transaction>2023/04/06 08:49:30.000.499,=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit1.pas</Transaction>
+    <Transaction>2023/04/06 08:49:43.000.697,C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\model\DAO\PostoABC.Model.DAO.Bomba.pas=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit1.pas</Transaction>
+    <Transaction>2023/04/06 09:39:41.000.280,=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit1.pas</Transaction>
+    <Transaction>2023/04/06 09:40:12.000.378,C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\controller\PostoABC.Controller.Contract.pas=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit1.pas</Transaction>
+    <Transaction>2023/04/06 09:46:09.000.944,=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit1.pas</Transaction>
+    <Transaction>2023/04/06 09:52:54.000.553,C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\controller\PostoABC.Controller.pas=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit1.pas</Transaction>
+    <Transaction>2023/04/06 11:46:19.000.273,=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit1.pas</Transaction>
+    <Transaction>2023/04/06 11:46:32.000.558,=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit2.pas</Transaction>
+    <Transaction>2023/04/06 11:47:26.000.537,C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit2.pas=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\view\PostoABC.View.Tanque.pas</Transaction>
+    <Transaction>2023/04/06 11:47:26.000.537,C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit2.dfm=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\view\PostoABC.View.Tanque.dfm</Transaction>
+    <Transaction>2023/04/06 15:13:21.000.254,=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit1.pas</Transaction>
+    <Transaction>2023/04/06 15:13:35.000.264,C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\view\PostoABC.View.Bomba.dfm=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit1.dfm</Transaction>
+    <Transaction>2023/04/06 15:13:35.000.264,C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\view\PostoABC.View.Bomba.pas=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit1.pas</Transaction>
+    <Transaction>2023/04/09 14:14:01.000.159,=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit1.pas</Transaction>
+    <Transaction>2023/04/09 14:14:22.000.005,C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\view\PostoABC.View.RelatorioAbastecimentos.dfm=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit1.dfm</Transaction>
+    <Transaction>2023/04/09 14:14:22.000.005,C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\view\PostoABC.View.RelatorioAbastecimentos.pas=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit1.pas</Transaction>
+    <Transaction>2023/04/09 23:28:39.125,=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit1.pas</Transaction>
+    <Transaction>2023/04/09 23:29:36.540,C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\controller\types\Controller.types.pas=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit1.pas</Transaction>
+    <Transaction>2023/04/09 23:31:22.461,C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\controller\types\Controller.types.pas=</Transaction>
+    <Transaction>2023/04/09 23:31:50.467,=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\controller\types\PostoABC.Controller.types.pas</Transaction>
+    <Transaction>2023/04/10 08:01:58.908,=C:\Users\Acer\Desktop\PROJETOS ESTUDOS\PostoABC\src\Unit1.pas</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="controller"/>
+    <File Path="controller\types"/>
+    <File Path="controller\types\PostoABC.Controller.types.pas"/>
+    <File Path="controller\PostoABC.Controller.Contract.pas"/>
+    <File Path="controller\PostoABC.Controller.pas"/>
+    <File Path="model"/>
+    <File Path="model\components"/>
+    <File Path="model\components\connection"/>
+    <File Path="model\components\connection\PostoABC.Model.Components.Connection.Contract.pas"/>
+    <File Path="model\components\connection\PostoABC.Model.Components.Connection.FireDAC.pas"/>
+    <File Path="model\DAO"/>
+    <File Path="model\DAO\PostoABC.Model.DAO.Abastecimento.pas"/>
+    <File Path="model\DAO\PostoABC.Model.DAO.Contract.pas"/>
+    <File Path="model\DAO\PostoABC.Model.DAO.Tanque.pas"/>
+    <File Path="model\DAO\PostoABC.Model.DAO.Bomba.pas"/>
+    <File Path="model\entities"/>
+    <File Path="model\entities\PostoABC.Model.Entities.Abastecimento.pas"/>
+    <File Path="model\entities\PostoABC.Model.Entities.Bomba.pas"/>
+    <File Path="model\entities\PostoABC.Model.Entities.Tanque.pas"/>
+    <File Path="view"/>
+    <File Path="view\PostoABC.View.Principal.pas"/>
+    <File Path="view\PostoABC.View.Principal.dfm"/>
+    <File Path="view\PostoABC.View.Tanque.pas"/>
+    <File Path="view\PostoABC.View.Tanque.dfm"/>
+    <File Path="view\PostoABC.View.Bomba.pas"/>
+    <File Path="view\PostoABC.View.Bomba.dfm"/>
+    <File Path="view\PostoABC.View.RelatorioAbastecimentos.pas"/>
+    <File Path="view\PostoABC.View.RelatorioAbastecimentos.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>

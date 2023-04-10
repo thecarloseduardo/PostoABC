@@ -1,0 +1,10 @@
+unit ProjetoABC.Model.Components.Connection.Contract;
+
+interface
+
+type
+  IModelComponents
+
+implementation
+
+end.

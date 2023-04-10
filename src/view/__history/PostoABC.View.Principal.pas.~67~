@@ -1,0 +1,174 @@
+unit PostoABC.View.Principal;
+
+interface
+
+uses
+  Winapi.Windows,
+  Winapi.Messages,
+  System.Variants,
+  System.Classes,
+  Vcl.Graphics,
+  Vcl.Controls,
+  Vcl.Forms,
+  Vcl.Dialogs,
+  Vcl.Grids,
+  Vcl.DBGrids,
+  Vcl.StdCtrls, Vcl.DBCtrls, Data.DB, PostoABC.Controller.Contract;
+
+type
+  TfrmAbastecimento = class(TForm)
+    btnBombas: TButton;
+    btnTanques: TButton;
+    Label1: TLabel;
+    edtValor: TEdit;
+    Label2: TLabel;
+    edtQuantidade: TEdit;
+    Label3: TLabel;
+    edtTotalAbastecimento: TEdit;
+    Label4: TLabel;
+    DBLookupComboBox1: TDBLookupComboBox;
+    lblImposto: TLabel;
+    DBGrid1: TDBGrid;
+    dsBomba: TDataSource;
+    dsAbastecimento: TDataSource;
+    btnAbastecer: TButton;
+    Button1: TButton;
+    procedure FormCreate(Sender: TObject);
+    procedure btnTanquesClick(Sender: TObject);
+    procedure btnBombasClick(Sender: TObject);
+    procedure DBLookupComboBox1Exit(Sender: TObject);
+    procedure edtValorExit(Sender: TObject);
+    procedure btnAbastecerClick(Sender: TObject);
+    procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
+      DataCol: Integer; Column: TColumn; State: TGridDrawState);
+    procedure edtQuantidadeExit(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+    FDAO : IController;
+  public
+    { Public declarations }
+  end;
+
+var
+  frmAbastecimento: TfrmAbastecimento;
+
+implementation
+
+uses
+  PostoABC.Controller, PostoABC.View.Tanque, PostoABC.View.Bomba,
+  System.SysUtils, PostoABC.View.RelatorioAbastecimentos;
+
+
+{$R *.dfm}
+
+procedure TfrmAbastecimento.btnBombasClick(Sender: TObject);
+var
+  LFrmBombas : TFrmBombas;
+begin
+  LFrmBombas := TFrmBombas.Create(Self);
+  try
+    LFrmBombas.ShowModal;
+  finally
+    LFrmBombas.Free;
+  end;
+end;
+
+procedure TfrmAbastecimento.btnTanquesClick(Sender: TObject);
+var
+  LFrmTanques : TfrmTanques;
+begin
+  LFrmTanques := TfrmTanques.Create(Self);
+  try
+    LFrmTanques.ShowModal;
+  finally
+    LFrmTanques.Free
+  end;
+end;
+
+procedure TfrmAbastecimento.Button1Click(Sender: TObject);
+var
+  LFrmRelatorioAbastecimento : TfrmRelatorioAbastecimento;
+begin
+  LFrmRelatorioAbastecimento := TfrmRelatorioAbastecimento.Create(Self);
+  try
+    LFrmRelatorioAbastecimento.RLReport1.Preview;
+  finally
+    LFrmRelatorioAbastecimento.Free;
+  end;
+end;
+
+procedure TfrmAbastecimento.btnAbastecerClick(Sender: TObject);
+begin
+  FDAO
+    .Abastecimentos
+      .This
+        .DataAbastecimento(now)
+        .IdBomba(dsBomba.DataSet.FieldByName('ID_BOMBA').AsInteger)
+        .ValorPorLitro(dsBomba.DataSet.FieldByName('VALOR_LITRO').AsCurrency)
+        .QuantidaDeLitros(StrToCurr(edtQuantidade.Text))
+        .ValorAbastecimento(StrToCurr(edtValor.Text));
+
+  FDAO
+    .Abastecimentos
+      .Insert
+      .Get;
+end;
+
+procedure TfrmAbastecimento.DBGrid1DrawColumnCell(Sender: TObject;
+  const Rect: TRect; DataCol: Integer; Column: TColumn; State: TGridDrawState);
+begin
+//  if Column.FieldName = 'DATA_ABASTECIMENTO' then
+//    Column.Field.Value := FormatDateTime('dd-mm-yyyy', Column.Field.AsDateTime);
+end;
+
+procedure TfrmAbastecimento.DBLookupComboBox1Exit(Sender: TObject);
+begin
+  lblImposto.Caption := dsBomba.DataSet.FieldByName('VALOR_LITRO').AsString;
+end;
+
+procedure TfrmAbastecimento.edtQuantidadeExit(Sender: TObject);
+var
+  LValorLitro      : currency;
+  LValorSolicitado : currency;
+  LQuantidade      : currency;
+begin
+  LValorLitro      := dsBomba.DataSet.FieldByName('VALOR_LITRO').AsCurrency;
+  LQuantidade      := StrToCurr(edtQuantidade.Text);
+
+  LValorSolicitado := LValorLitro * LQuantidade;
+  edtValor.Text    := FormatFloat('#,0.000', LValorSolicitado);
+end;
+
+procedure TfrmAbastecimento.edtValorExit(Sender: TObject);
+var
+  LValorLitro      : currency;
+  LValorSolicitado : currency;
+  LQuantidade      : currency;
+begin
+  LValorLitro      := dsBomba.DataSet.FieldByName('VALOR_LITRO').AsCurrency;
+  LValorSolicitado := StrToCurr(edtValor.Text);
+  LQuantidade      := LValorSolicitado / LValorLitro;
+
+  edtQuantidade.Text := FormatFloat('#,0.000', LQuantidade);
+end;
+
+procedure TfrmAbastecimento.FormCreate(Sender: TObject);
+begin
+  ReportMemoryLeaksOnShutdown := true;
+
+  FDAO := TController.New;
+
+  FDAO
+    .Abastecimentos
+      .DataSet(dsAbastecimento)
+      .Get;
+
+  FDAO
+    .Bombas
+      .DataSet(dsBomba)
+      .Get;
+
+end;
+
+end.

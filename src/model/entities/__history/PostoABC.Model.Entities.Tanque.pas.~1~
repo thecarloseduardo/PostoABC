@@ -1,0 +1,7 @@
+unit PostoABC.Model.Entities.Tanque;
+
+interface
+
+implementation
+
+end.

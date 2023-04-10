@@ -1,0 +1,19 @@
+unit PostoABC.Model.Entities.Bomba;
+
+interface
+
+type
+  TBomba = class
+  private
+  public
+    constructor Create;
+    destructor Destroy; override;
+    function IdBomba(AValue : integer) : TBomba; overload;
+    function IdBomba : integer; overload;
+    function IdenticacaoBomba(AValue : string) : TBomba; overload;
+    function IdenficacaoBomba : string; overload;
+  end;
+
+implementation
+
+end.

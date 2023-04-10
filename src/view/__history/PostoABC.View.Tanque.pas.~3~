@@ -1,0 +1,44 @@
+unit PostoABC.View.Tanque;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.Grids,
+  Vcl.DBGrids;
+
+type
+  TfrmTanques = class(TForm)
+    edtNumeroTanque: TEdit;
+    edtCapacidadeTanque: TEdit;
+    DBGrid1: TDBGrid;
+    dsTanques: TDataSource;
+    Label1: TLabel;
+    Label2: TLabel;
+    Edit1: TEdit;
+    Label3: TLabel;
+    btnGet: TButton;
+    btnInsert: TButton;
+    btnUpdate: TButton;
+    btnDelete: TButton;
+    btnClose: TButton;
+    procedure btnCloseClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmTanques: TfrmTanques;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmTanques.btnCloseClick(Sender: TObject);
+begin
+  Close;
+end;
+
+end.

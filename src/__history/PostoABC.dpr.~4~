@@ -1,0 +1,20 @@
+program PostoABC;
+
+uses
+  Vcl.Forms,
+  PostoABC.View.Principal in 'view\PostoABC.View.Principal.pas' {Form1},
+  ProjetoABC.Model.Components.Connection.Contract in 'model\components\connection\ProjetoABC.Model.Components.Connection.Contract.pas',
+  ProjetoABC.Model.Components.Connection.FireDAC in 'model\components\connection\ProjetoABC.Model.Components.Connection.FireDAC.pas',
+  PostoABC.Model.Entities.Tanque in 'model\entities\PostoABC.Model.Entities.Tanque.pas',
+  PostoABC.Model.Entities.Bomba in 'model\entities\PostoABC.Model.Entities.Bomba.pas',
+  PostoABC.Model.Entities.Abastecimento in 'model\entities\PostoABC.Model.Entities.Abastecimento.pas',
+  PostoABC.Model.DAO.Categoria in 'model\DAO\PostoABC.Model.DAO.Categoria.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

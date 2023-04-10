@@ -1,0 +1,7 @@
+unit PostoABC.Model.DAO.Contract;
+
+interface
+
+implementation
+
+end.

@@ -1,0 +1,73 @@
+unit ProjetoABC.Model.Components.Connection.FireDAC;
+
+interface
+
+uses
+  ProjetoABC.Model.Components.Connection.Contract;
+
+type
+    TModelComponentsConnectionFireDAC = class(TInterfacedObject, IModelComponentsConnection)
+      private
+      public
+        constructor Create;
+        destructor Destroy; override;
+        class function New : IModelComponentsConnection;
+        function Active(AValue : Boolean)                         : IModelComponentsConnection;
+        function ClearSQL                                         : IModelComponentsConnection;
+        function ParamName(AParamName : string; AValue : string)  : IModelComponentsConnection; overload;
+        function ParamName(AParamName : string; AValue : integer) : IModelComponentsConnection; overload;
+        function SQL(AVAlue : string)                             : IModelComponentsConnection;
+        function Open                                             : IModelComponentsConnection;
+    end;
+
+implementation
+
+{ TModelComponentsConnectionFireDAC }
+
+function TModelComponentsConnectionFireDAC.Active(AValue: Boolean): IModelComponentsConnection;
+begin
+  Result := Self;
+end;
+
+function TModelComponentsConnectionFireDAC.ClearSQL: IModelComponentsConnection;
+begin
+  Result := Self;
+end;
+
+constructor TModelComponentsConnectionFireDAC.Create;
+begin
+
+end;
+
+destructor TModelComponentsConnectionFireDAC.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TModelComponentsConnectionFireDAC.New: IModelComponentsConnection;
+begin
+    Result := Self.Create;
+end;
+
+function TModelComponentsConnectionFireDAC.Open: IModelComponentsConnection;
+begin
+  Result := Self;
+end;
+
+function TModelComponentsConnectionFireDAC.ParamName(AParamName, AValue: string): IModelComponentsConnection;
+begin
+  Result := Self;
+end;
+
+function TModelComponentsConnectionFireDAC.ParamName(AParamName: string; AValue: integer): IModelComponentsConnection;
+begin
+  Result := Self;
+end;
+
+function TModelComponentsConnectionFireDAC.SQL(AVAlue: string): IModelComponentsConnection;
+begin
+  Result := Self;
+end;
+
+end.

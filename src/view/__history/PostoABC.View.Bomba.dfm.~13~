@@ -1,0 +1,128 @@
+object frmBombas: TfrmBombas
+  Left = 0
+  Top = 0
+  Caption = 'Bombas'
+  ClientHeight = 325
+  ClientWidth = 447
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 16
+    Top = 24
+    Width = 73
+    Height = 13
+    Caption = 'Identifica'#231#227'o .:'
+  end
+  object Label2: TLabel
+    Left = 16
+    Top = 51
+    Width = 44
+    Height = 13
+    Caption = 'Tanque.:'
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Top = 128
+    Width = 447
+    Height = 197
+    Align = alBottom
+    DataSource = dsBombas
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'IDENTIFICACAO_BOMBA'
+        Title.Caption = 'Identifica'#231#227'o Bomba'
+        Width = 232
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ID_TANQUE'
+        Title.Caption = 'N'#186' Tanque'
+        Visible = True
+      end>
+  end
+  object edtIdentificacaoBomba: TEdit
+    Left = 101
+    Top = 21
+    Width = 145
+    Height = 21
+    TabOrder = 1
+  end
+  object btnGet: TButton
+    Left = 8
+    Top = 81
+    Width = 75
+    Height = 25
+    Caption = 'Listar'
+    TabOrder = 2
+    OnClick = btnGetClick
+  end
+  object btnInsert: TButton
+    Left = 89
+    Top = 81
+    Width = 75
+    Height = 25
+    Caption = 'Inserir'
+    TabOrder = 3
+    OnClick = btnInsertClick
+  end
+  object btnUpdate: TButton
+    Left = 171
+    Top = 81
+    Width = 75
+    Height = 25
+    Caption = 'Atualizar'
+    TabOrder = 4
+    OnClick = btnUpdateClick
+  end
+  object btnDelete: TButton
+    Left = 252
+    Top = 81
+    Width = 75
+    Height = 25
+    Caption = 'Deletar'
+    TabOrder = 5
+    OnClick = btnDeleteClick
+  end
+  object btnClose: TButton
+    Left = 364
+    Top = 81
+    Width = 75
+    Height = 25
+    Caption = 'Sair'
+    TabOrder = 6
+  end
+  object dbCboTanque: TDBComboBox
+    Left = 101
+    Top = 48
+    Width = 63
+    Height = 21
+    DataField = 'NUMERO_TANQUE'
+    DataSource = dsTanques
+    TabOrder = 7
+  end
+  object dsBombas: TDataSource
+    Left = 216
+    Top = 240
+  end
+  object dsTanques: TDataSource
+    Left = 216
+    Top = 176
+  end
+end
